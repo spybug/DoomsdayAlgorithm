@@ -91,7 +91,7 @@ function submitForm(event) {
 
     const answer = calculateDayOfWeek(date);
     if (answer) {
-      document.getElementById('result-text').innerHTML = `The day of the week is: ${answer}`;
+      document.getElementById('result-text').innerHTML = `The day of the week is: ${answer} 🎉`;
     }
 
     const stepsOrderedList = document.getElementById('result-steps');
