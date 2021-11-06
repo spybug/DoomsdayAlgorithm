@@ -26,8 +26,8 @@ function calculateDayOfWeek(date) {
   const century = Math.floor(date.year() / 100);
   const year = parseInt(date.year().toString().slice(-2));
   const centuryAnchorDay = calculateCenturyAnchorDay(century);
-  steps.push(`First, we calculate the anchor day for the year ${date.year()}`);
-  steps.push(`Anchor day for the ${century}00s century is: ${DAY_NAMES[centuryAnchorDay]}`);
+  steps.push(`First, calculate the anchor day for the year ${date.year()}`);
+  steps.push(`The anchor day for the ${century}00s century is: ${DAY_NAMES[centuryAnchorDay]}`);
 
   const closestKeyYear = findClosestSmaller(KEY_YEARS, year);
   steps.push(`The closest key year to ${year} out of [0, 28, 56, 84] is: ${closestKeyYear}`);
@@ -45,6 +45,7 @@ function calculateDayOfWeek(date) {
   const yearAnchorDay = mod((centuryAnchorDay + actualDaysToAdd), 7);
   steps.push(`So the anchor day for ${date.year()} is ${DAY_NAMES[yearAnchorDay]}!`);
 
+  steps.push(`Next, calculate the offset from the anchor day using the month and day`);
   const isLeapYear = (date.year() % 4 == 0);
   let anchorDate = ANCHOR_DATES.get(date.month() + 1);
   if (LEAP_YEAR_SPECIAL_MONTHS.has(date.month() + 1) && isLeapYear) {
