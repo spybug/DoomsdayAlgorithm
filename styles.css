@@ -1,4 +1,8 @@
 
+input::-webkit-calendar-picker-indicator{
+  display: none;
+  -webkit-appearance: none;
+}
 
 body {
     padding: 0.5rem;
@@ -13,14 +17,19 @@ body > * {
   margin-top: 1rem;
 }
 
-/* #input {
-     margin-top: 1rem; 
-} */
-
 #submit {
     margin-left: 1rem;
     margin-right: 1rem;
 }
+
+#result-steps-instructions {
+  margin-top: 3rem;
+}
+
+li {
+  margin-bottom: 0.2rem;
+}
+
 
 #error-text {
   color: #ff0000;
